@@ -41,10 +41,6 @@ build: dep 			## Build the binary file
 clean:				## clean the build
 	@go clean $(PKG)
 
-push: 
-	@git stage --all
-	@git commit -m "Changes made"
-	@git stage --all
-	
+
 help: 				## Display this help screen
 	@sed -ne '/@sed/!s/## //p' $(MAKEFILE_LIST)
