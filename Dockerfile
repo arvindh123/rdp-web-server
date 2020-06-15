@@ -1,7 +1,8 @@
 FROM guacamole/guacd
-COPY dir:./rdp-web-server in /opt/rdp-web-server/rdp-web-server
-COPY dir:./dist in /opt/rdp-web-server/
-
+RUN mkdir -p /opt/rdp-web-server /opt/rdp-web-server/dist
+ADD rdp-web-server  /opt/rdp-web-server/
+ADD dist /opt/rdp-web-server/dist/
+RUN chmod +x /opt/rdp-web-server/rdp-web-server
 EXPOSE 4567
 
-CMD ["/bin/sh" "-c" "/usr/local/guacamole/sbin/guacd  && /opt/rdp-web-server/rdp-web-server"]
+CMD ["/opt/rdp-web-server/rdp-web-server"]
