@@ -17,7 +17,7 @@ import (
 )
 var keyString string = "a very very very very secret key"
 func main() {
-	logrus.SetLevel(logrus.DebugLevel)
+	logrus.SetLevel(logrus.InfoLevel)
 
 	servlet := guac.NewServer(DemoDoConnect)
 	wsServer := guac.NewWebsocketServer(DemoDoConnect)
